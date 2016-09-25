@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  </head>
+  <body>
+    <!-- page content -->
+      <div class="loginDIV">
+        <!-- # Login Form -->
+            <form id="login-form" action="/login/" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+                <div id="div-login-msg">
+                        <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                        <!-- error_messages -->
+                        {% if login_form.non_field_errors %}
+                            {% for error in login_form.non_field_errors %}
+                                <span id="text-login-msg">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                        <!-- #error_messages -->
+                </div>
+                <input id="login_username" name="username" class="form-control" type="text" placeholder="Username">
+                <input id="login_password" name="password" class="form-control" type="password" placeholder="Password">
+
+            </div>
+            <div class="modal-footer">
+                  <div><button type="submit" class="btn btn-primary btn-lg btn-block">Login</button></div>
+
+            </div>
+            </form>
+        <!-- # Login Form -->
+      </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  </head>
+  <body>
+    <!-- page content -->
+      <p>Welcome, {{ user.first_name }} {{ user.last_name }}. [ <a href="/logout/"> Çıkış yap </a> ]</p>
+  </body>
+</html>

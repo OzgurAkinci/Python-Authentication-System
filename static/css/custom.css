@@ -1,0 +1,11 @@
+.loginDIV
+{
+  width:350px;
+  margin:auto;
+  margin-top:100px;
+  background:#eee;
+}
+
+.form-control{
+  margin-top:1px;
+}
